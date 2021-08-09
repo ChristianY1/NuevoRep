@@ -1,3 +1,4 @@
+#Bajar imagen microsoft
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 as builder
 
 WORKDIR /Worker
@@ -7,7 +8,7 @@ RUN dotnet restore
 COPY src/Worker/ .
 RUN dotnet publish -c Release -o /out Worker.csproj
 
-# app image
+#Imagen version 3:1
 FROM mcr.microsoft.com/dotnet/core/runtime:3.1
 
 WORKDIR /app

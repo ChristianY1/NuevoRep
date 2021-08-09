@@ -1,6 +1,7 @@
+#Imagen python oficial
 FROM python:3.9-slim
 
-# add apache bench (ab) tool
+# ADICION DE herramineta apache
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
     apache2-utils \
@@ -10,7 +11,7 @@ WORKDIR /seed
 
 COPY . .
 
-# create POST data files with ab friendly formats
+# Creacion de archivos POST con formato compatible
 RUN python make-data.py
 
 CMD /seed/generate-votes.sh

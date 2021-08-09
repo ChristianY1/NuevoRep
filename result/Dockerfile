@@ -1,19 +1,20 @@
+# Descarga de imagen node
 FROM node:10-slim
 
-# add curl for healthcheck
+# verificacion de curl 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
-# Add Tini for proper init of signals
+# Agregar complementos 
 ENV TINI_VERSION v0.19.0
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
 RUN chmod +x /tini
 
 WORKDIR /app
 
-# have nodemon available for local dev use (file watching)
+# agregar modulo para visualizar archivos
 RUN npm install -g nodemon
 
 COPY package*.json ./
