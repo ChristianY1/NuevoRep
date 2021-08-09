@@ -1,4 +1,5 @@
 #INFORME
+<<<<<<< HEAD
 ![Architecture diagram](../main/images/0001.jpg)
 ![Architecture diagram](../main/images/0002.jpg)
 ![Architecture diagram](../main/images/0003.jpg)
